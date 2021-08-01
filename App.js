@@ -7,13 +7,14 @@ export default function App() {
 
   return (
     <AnimatedLayout style={styles.container}>
-      <Pressable onPress={Keyboard.dismiss} style={styles.flex1}>
-        <Animated.View entering={SlideInRight} exiting={SlideOutRight}>
-          <Text>REA AnimatedLayout android bug reproduction</Text>
-          <Button title="Toggle" onPress={() => setIsVisible((prev) => !prev)} />
-          {isVisible && <View><Image source={require("./assets/error_triangle.png")} /><Text>I won't get removed :(</Text></View>}
-        </Animated.View>
-      </Pressable>
+      <Animated.View entering={SlideInRight} exiting={SlideOutRight}>
+        <Text>REA AnimatedLayout android bug reproduction</Text>
+        <Button title="Toggle" onPress={() => setIsVisible((prev) => !prev)} />
+        {isVisible && (<View>
+          <Text>I am the first view.</Text>
+          <Text>I am the second, and I won't get removed :(</Text>
+        </View>)}
+      </Animated.View>
     </AnimatedLayout>
   );
 }
