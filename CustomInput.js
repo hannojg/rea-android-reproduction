@@ -70,7 +70,7 @@ export const CustomInput = React.forwardRef(
                 {isError && isFocussed && (
                     <View style={styles.errorContainer}>
                         <View style={styles.errorIcon}>
-                            {/* <Icon.ErrorTriangle color={COLOR_ERROR} /> */}
+                            <Image source={require("./assets/error_triangle.png")} />
                         </View>
                         <Text>
                             {errorMsg}
